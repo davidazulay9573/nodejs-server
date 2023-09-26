@@ -8,12 +8,13 @@ const usersRouter = require("./routes/users");
 const connectionRoute = require("./routes/connection");
 const cardsRouter = require('./routes/cards');
 const fileLogger = require("./middleware/fileLogger");
+const sendError = require('./utils/sendError');
 
 const MONGO_URI =
   config.get("NODE_ENV") === "production"
     ? config.get("MONGO_URI_ATLAS")
     : config.get("MONGO_URI_LOCAL");
-;
+
 
 mongoose
   .connect(MONGO_URI)
@@ -37,8 +38,7 @@ app.use("/connection", connectionRoute);
 app.use('/cards', cardsRouter);
 
 app.all("*", (req, res) => {
-  res.statusMessage = "404: Page not found.";
-  res.status(404).send("404: Page not found.");
+  sendError(res, 404, "Page not found.");
   return;
 });
 
