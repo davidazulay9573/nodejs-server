@@ -3,7 +3,9 @@
 ## Description
 
 This project is a Node.js server that includes user and card routes to display and manage businesses.
+
 The system features user authentication using JSON Web Tokens (JWT) and password encryption using bcrypt.
+
 The server is designed to accommodate three types of users: Admin, Business, and regular (simple) Users,
 each with different authorization levels.
 
