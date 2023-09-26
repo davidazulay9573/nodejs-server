@@ -65,7 +65,12 @@ async function updatedUser(req, res) {
 
 async function deleteUser(req, res) {
   try {
-    await User.findOneAndDelete({ _id: req.params.id });
+    const user = await User.findOneAndDelete({ _id: req.params.id });
+      if (!user) {
+        sendError(res, 404, "The user with the given ID was not found");
+        return;
+      }
+  
     res.send("the user deleted successfully");
   } catch (error) {
     if (error.path === "_id") {

@@ -79,7 +79,7 @@ async function updatedCard(req, res) {
 
 async function deleteCard(req, res) {
   try {
-    await Card.findOneAndDelete({ _id: req.params.id });
+   const card = await Card.findOneAndDelete({ _id: req.params.id });
     if (!card) {
       sendError(res, 404, "The card with the given ID was not found");
       return;
