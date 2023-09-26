@@ -1,0 +1,8 @@
+
+{
+  "PORT": 3000,
+  "NODE_ENV": "development",
+  "MONGO_URI_LOCAL": "",
+  "MONGO_URI_ATLAS": "",
+  "JWT_SECRET": ""
+}
