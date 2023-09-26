@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a Node.js server that includes user and card routes to display and manage businesses.
+This project is a Node.js && Express server that includes user and card routes to display and manage businesses.
 
 The system features user authentication using JSON Web Tokens (JWT) and password encryption using bcrypt.
 
@@ -11,15 +11,19 @@ each with different authorization levels.
 
 ## Install
 
-### Clone the repository
+
 ```
 git clone https://github.com/davidazulay9573/nodejs-server
 ```
-### Install dependencies
+
+```
+cd nodejs-server
+```
+
 ```
 npm i
 ```
-Change the ".env.example" file to ".env" and enter the various variables.
+#### Change the ".env.example" file to ".env" and enter the various variables.
    
 ### Run in development
 ```
@@ -61,11 +65,11 @@ npm run seed-db
 | No. | URL      | Method | Authorization                  | Action                   | Return        |
 |-----|----------|:------:|--------------------------------|--------------------------|:-------------:|
 | 1   | `/users` | GET    | Business / Admin               | Get all users            | Array of users|
-| 2   | `/me`    | GET    | Registered User                | Get current user's info  | User          |
-| 3   | `/:id`   | GET    | Business / Admin / Account Owner| Get user by ID           | User          |
-| 4   | `/:id`   | PUT    | Admin / Account Owner          | Modify user information  | User          |
-| 5   | `/:id`   | DELETE | Admin / Account Owner          | Delete user              | Message       |
-| 6   | `/:id`   | PATCH  | Admin / Account Owner          | Switch account status    | Message       |
+| 2   | `/users/me`    | GET    | Registered User                | Get current user's info  | User          |
+| 3   | `/users/:id`   | GET    | Business / Admin / Account Owner| Get user by ID           | User          |
+| 4   | `/users/:id`   | PUT    | Admin / Account Owner          | Modify user information  | User          |
+| 5   | `/users/:id`   | DELETE | Admin / Account Owner          | Delete user              | Message       |
+| 6   | `/users/:id`   | PATCH  | Admin / Account Owner          | Switch account status    | Message       |
 
 
 ## Cards Route
